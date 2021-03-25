@@ -1,0 +1,66 @@
+﻿@*
+
+*@
+@{
+    ViewBag.Title = "Movie Form";
+}
+
+@model Movie
+<!--For for users to input movies which are then sent to the model-->
+<form asp-action="EnterMovie" method="post">
+    <div>
+        <label asp-for="Category">Category: </label>
+        <input asp-for="Category" required />
+    </div>
+    <br />
+    <div>
+        <label asp-for="Title">Title: </label>
+        <input asp-for="Title" required />
+    </div>
+    <br />
+    <div>
+        <label asp-for="Year">Year: </label>
+        <input asp-for="Year" required />
+    </div>
+    <br />
+    <div>
+        <label asp-for="Director">Director: </label>
+        <input asp-for="Director" required />
+    </div>
+    <br />
+    <div>
+        <label asp-for="Rating">Rating: </label>
+        <select asp-for="Rating" required>
+            <option value="">Select One</option>
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select>
+    </div>
+    <br />
+    <div>
+        <label asp-for="Edited">Edited: </label>
+        <select asp-for="Edited">
+            <option value="">Select One</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+    <br />
+    <div>
+        <label asp-for="LentTo">Lent To: </label>
+        <input asp-for="LentTo" />
+    </div>
+    <br />
+    <div>
+        <label asp-for="Notes">Notes: </label>
+        <input asp-for="Notes" />
+    </div>
+    <span asp-validation-for="Notes" style="color:darkred;"></span><br />
+    <br />
+    <button type="submit">Submit The Movie</button>
+
+    <div asp-validation-summary="All"></div>
+</form>
+

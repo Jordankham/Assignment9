@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<!--This is the template that all other views are based on-->
+<html lang="en">
+
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Links to other pages-->
+    <a asp-action="Index">Home</a>
+    <a asp-action="EnterMovie">Enter a Movie</a>
+    <a asp-action="MyPodcasts">My Podcasts</a>
+    <a asp-action="MovieList">Movie List</a>
+</head>
+
+<body>
+    <h1>@ViewBag.Title</h1>
+
+    @RenderBody()
+
+    <br />
+    <br />
+    <footer>Movie Database 2021</footer>
+</body>
+
+</html>

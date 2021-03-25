@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Movie List";
+}
+
+@model MovieListModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Rating</th>
+            <th>Edited</th>
+            <th>LentTo</th>
+            <th>Notes</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @*This model passed in is the Models.SubmittedMovies.FilteredMovies object*@
+        @foreach (Assignment9.Models.Movie m in Model.Movies)
+        {
+        <tr>
+            <td>@m.Category</td>
+            <td>@m.Title</td>
+            <td>@m.Year</td>
+            <td>@m.Director</td>
+            <td>@m.Rating</td>
+            <td>@m.Edited</td>
+            <td>@m.LentTo</td>
+            <td>@m.Notes</td>
+            <td>
+                <form asp-action="EditMovie" method="get">
+                    <input id="id" name="movieid" value="@m.MovieId" hidden />
+                    <button type="submit">Edit or Delete</button>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
